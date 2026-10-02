@@ -1,0 +1,1778 @@
+[
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2025-09",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2025-10",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=4"
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=23"
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 3,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 3,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 12,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 1,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماعيل عبدالله محمد المغربي",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 1,
+  "absence": 8,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمود سلواوي",
+  "month": "2025-09",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمود سلواوي",
+  "month": "2025-10",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=0"
+ },
+ {
+  "staff": "محمد محمود سلواوي",
+  "month": "2025-11",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=0"
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 1,
+  "notes": "Imported sheet shows present=22"
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 3,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 1,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 11,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 1,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=20"
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 14,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 1,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2025-09",
+  "workingDays": 20,
+  "leave": 8,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-02",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-03",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-04",
+  "workingDays": 11,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 7,
+  "absence": 8,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 10,
+  "absence": 7,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 9,
+  "absence": 6,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 8,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2025-10",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=7"
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=23"
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-02",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-03",
+  "workingDays": 15,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-06",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2025-10",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=7"
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=23"
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-02",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-03",
+  "workingDays": 15,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-06",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2025-10",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=1"
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2025-11",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2025-12",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2026-01",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2026-02",
+  "workingDays": 3,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2026-03",
+  "workingDays": 3,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2026-04",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سليمان أحمد سليمان",
+  "month": "2026-05",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد حمال الدين حامد محمود زهران",
+  "month": "2025-10",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=1"
+ },
+ {
+  "staff": "خالد حمال الدين حامد محمود زهران",
+  "month": "2025-11",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد حمال الدين حامد محمود زهران",
+  "month": "2025-12",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد حمال الدين حامد محمود زهران",
+  "month": "2026-01",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "مريم اسلام سمير حسن محمد",
+  "month": "2025-10",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=4"
+ },
+ {
+  "staff": "مريم اسلام سمير حسن محمد",
+  "month": "2025-11",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=10"
+ },
+ {
+  "staff": "مريم اسلام سمير حسن محمد",
+  "month": "2025-12",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "مريم اسلام سمير حسن محمد",
+  "month": "2026-01",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2025-10",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=3"
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2025-11",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=9"
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2025-12",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2026-01",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2026-02",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2026-03",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2026-04",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "ميسره محمد فاروق محمد",
+  "month": "2026-05",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2025-10",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=4"
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2025-11",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 4,
+  "notes": "Imported sheet shows present=9"
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2025-12",
+  "workingDays": 14,
+  "leave": 0,
+  "absence": 7,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-01",
+  "workingDays": 11,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-02",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-03",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-04",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-05",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-06",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-07",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خالد سامي سماح السيد عبدالرحمن",
+  "month": "2026-08",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2025-09",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2025-10",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=2"
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2025-11",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2025-12",
+  "workingDays": 10,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-01",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-02",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-03",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-04",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-05",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-06",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-07",
+  "workingDays": 10,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-08",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2025-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2025-10",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=2"
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2025-11",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2025-12",
+  "workingDays": 10,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-01",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-02",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-03",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-04",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-05",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-07",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد راضي صلاح أحمد",
+  "month": "2026-02",
+  "workingDays": 7,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد راضي صلاح أحمد",
+  "month": "2026-03",
+  "workingDays": 10,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد راضي صلاح أحمد",
+  "month": "2026-04",
+  "workingDays": 9,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "محمد راضي صلاح أحمد",
+  "month": "2026-05",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "جومانة فرج سليمان",
+  "month": "2025-09",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "جومانة فرج سليمان",
+  "month": "2026-04",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "جومانة فرج سليمان",
+  "month": "2026-05",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "جومانة فرج سليمان",
+  "month": "2026-06",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالله مصطفى محمد",
+  "month": "2025-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالله مصطفى محمد",
+  "month": "2026-07",
+  "workingDays": 12,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالله مصطفى محمد",
+  "month": "2026-08",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سلمى رمضان محمد صابر",
+  "month": "2025-09",
+  "workingDays": 3,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "هاني سامح السيد عبدالفتاح",
+  "month": "2025-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "يوسف طه السيد مصطفى",
+  "month": "2025-09",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالرحمن محمد كمال عبدالرحمن",
+  "month": "2025-09",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد محمد خلاف",
+  "month": "2026-02",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد محمد خلاف",
+  "month": "2026-03",
+  "workingDays": 6,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد محمد خلاف",
+  "month": "2026-04",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "مروة جمال محمد",
+  "month": "2026-02",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "مروة جمال محمد",
+  "month": "2026-03",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمد أحمد شهاوي",
+  "month": "2026-03",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمد أحمد شهاوي",
+  "month": "2026-04",
+  "workingDays": 11,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمد أحمد شهاوي",
+  "month": "2026-05",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 16,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-01",
+  "workingDays": 14,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-05",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "إسراء محمود أحمد",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 19,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-01",
+  "workingDays": 14,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-05",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-06",
+  "workingDays": 19,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-01",
+  "workingDays": 14,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-02",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-05",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "رحمة محمد أحمد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2025-10",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=7"
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=23"
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2025-12",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-01",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-02",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-05",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-06",
+  "workingDays": 19,
+  "leave": 0,
+  "absence": 4,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 3,
+  "notes": ""
+ },
+ {
+  "staff": "خديجة محمد سيد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خديجة محمد سيد",
+  "month": "2026-08",
+  "workingDays": 27,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2025-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 16,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2025-10",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": "Imported sheet shows present=7"
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2025-11",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 1,
+  "notes": "Imported sheet shows present=21"
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2025-12",
+  "workingDays": 21,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-01",
+  "workingDays": 22,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-02",
+  "workingDays": 24,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-03",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 2,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-04",
+  "workingDays": 17,
+  "leave": 0,
+  "absence": 7,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-05",
+  "workingDays": 22,
+  "leave": 3,
+  "absence": 6,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-06",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 7,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-07",
+  "workingDays": 18,
+  "leave": 0,
+  "absence": 11,
+  "notes": ""
+ },
+ {
+  "staff": "منار أحمد عبد اللاه محمد",
+  "month": "2026-08",
+  "workingDays": 23,
+  "leave": 0,
+  "absence": 23,
+  "notes": ""
+ },
+ {
+  "staff": "محمد محمود سلواوي",
+  "month": "2026-09",
+  "workingDays": 8,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد عبد الوهاب عبدالحكيم عبدالوهاب",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "وليد حلمي ابراهيم الغريب",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 1,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سالم يوسف سالم يوسف",
+  "month": "2026-09",
+  "workingDays": 20,
+  "leave": 8,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "رامي سعد محمد محمود الجيوشي",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "أحمد سعد محمد محمود الجيوشي",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "محمد دسوقي ابراهيم دسوقي",
+  "month": "2026-09",
+  "workingDays": 5,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبد الرحمن عاطف سعد عشيبة",
+  "month": "2026-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "جومانة فرج سليمان",
+  "month": "2026-09",
+  "workingDays": 1,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالله مصطفى محمد",
+  "month": "2026-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "سلمى رمضان محمد صابر",
+  "month": "2026-09",
+  "workingDays": 3,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "هاني سامح السيد عبدالفتاح",
+  "month": "2026-09",
+  "workingDays": 2,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "يوسف طه السيد مصطفى",
+  "month": "2026-09",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عبدالرحمن محمد كمال عبدالرحمن",
+  "month": "2026-09",
+  "workingDays": 4,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "زهوة محمد عيد",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 1,
+  "notes": ""
+ },
+ {
+  "staff": "اسماء عادل فارس",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "رحمة محمد أحمد",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "عاصم جمال عبد المنعم محمد",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ },
+ {
+  "staff": "خديجة محمد سيد",
+  "month": "2026-09",
+  "workingDays": 16,
+  "leave": 0,
+  "absence": 0,
+  "notes": ""
+ }
+]

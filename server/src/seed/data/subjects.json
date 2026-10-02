@@ -1,0 +1,167 @@
+[
+ {
+  "nameAr": "اللغة العربية",
+  "nameEn": "Arabic Language",
+  "category": "general",
+  "hours": {
+   "1Sec": "2",
+   "2Sec": "2",
+   "3Sec": "2"
+  },
+  "group": "القدرات اللغوية"
+ },
+ {
+  "nameAr": "Advanced English",
+  "nameEn": "Advanced English",
+  "category": "general",
+  "hours": {
+   "1Sec": "3",
+   "2Sec": "2",
+   "3Sec": "2"
+  },
+  "group": "القدرات اللغوية"
+ },
+ {
+  "nameAr": "Advanced Math",
+  "nameEn": "Advanced Math",
+  "category": "general",
+  "hours": {
+   "1Sec": "2",
+   "2Sec": "2",
+   "3Sec": "2"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "Advanced Physics",
+  "nameEn": "Advanced Physics",
+  "category": "general",
+  "hours": {
+   "1Sec": "2",
+   "2Sec": "2",
+   "3Sec": "2"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "الدراسات الاجتماعية",
+  "nameEn": "Social Studies",
+  "category": "general",
+  "hours": {
+   "1Sec": "–",
+   "2Sec": "2",
+   "3Sec": "1"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "الاقتصاد",
+  "nameEn": "Economics",
+  "category": "general",
+  "hours": {
+   "1Sec": "–",
+   "2Sec": "–",
+   "3Sec": "1"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "التربية الدينية",
+  "nameEn": "Religious Education",
+  "category": "general",
+  "hours": {
+   "1Sec": "1",
+   "2Sec": "1",
+   "3Sec": "1"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "التربية الوطنية",
+  "nameEn": "National Education",
+  "category": "general",
+  "hours": {
+   "1Sec": "1",
+   "2Sec": "–",
+   "3Sec": "–"
+  },
+  "group": "القدرات الرياضية والعلمية والاجتماعية والاقتصادية"
+ },
+ {
+  "nameAr": "التحول الرقمي",
+  "nameEn": "Digital Transformation",
+  "category": "general",
+  "hours": {
+   "1Sec": "1",
+   "2Sec": "1",
+   "3Sec": "1"
+  },
+  "group": "القدرات الرقمية والبدنية وريادة الأعمال"
+ },
+ {
+  "nameAr": "التربية الرياضية",
+  "nameEn": "Physical Education",
+  "category": "general",
+  "hours": {
+   "1Sec": "1",
+   "2Sec": "1",
+   "3Sec": "1"
+  },
+  "group": "القدرات الرقمية والبدنية وريادة الأعمال"
+ },
+ {
+  "nameAr": "التوجيه والإرشاد المهني",
+  "nameEn": "Career Guidance",
+  "category": "general",
+  "hours": {
+   "1Sec": "حصة كل أسبوعين",
+   "2Sec": "حصة كل أسبوعين",
+   "3Sec": "حصة كل أسبوعين"
+  },
+  "group": "القدرات الرقمية والبدنية وريادة الأعمال"
+ },
+ {
+  "nameAr": "ريادة الأعمال والابتكار",
+  "nameEn": "Entrepreneurship & Innovation",
+  "category": "general",
+  "hours": {
+   "1Sec": "حصة كل أسبوعين",
+   "2Sec": "حصة كل أسبوعين",
+   "3Sec": "حصة كل أسبوعين"
+  },
+  "group": "القدرات الرقمية والبدنية وريادة الأعمال"
+ },
+ {
+  "nameAr": "الدراسات الفنية التخصصية النظرية",
+  "nameEn": "Specialised Technical Studies – Theory",
+  "category": "technical",
+  "hours": {
+   "1Sec": "5",
+   "2Sec": "5",
+   "3Sec": "5"
+  },
+  "group": "القدرات الفنية والمهنية"
+ },
+ {
+  "nameAr": "الدراسات الفنية التخصصية العملية",
+  "nameEn": "Specialised Technical Studies – Practical",
+  "category": "technical",
+  "hours": {
+   "1Sec": "6",
+   "2Sec": "6",
+   "3Sec": "6"
+  },
+  "group": "القدرات الفنية والمهنية"
+ },
+ {
+  "nameAr": "التدريب الميداني",
+  "nameEn": "Field Training",
+  "category": "technical",
+  "hours": {
+   "1Sec": "14",
+   "2Sec": "14",
+   "3Sec": "14"
+  },
+  "group": "القدرات الفنية والمهنية"
+ }
+]

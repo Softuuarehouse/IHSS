@@ -1,0 +1,582 @@
+[
+ {
+  "periodLabel": "التكوينى الاول",
+  "monthLabel": "شهر اكتوبر - نوفمبر 2025",
+  "weekDates": [
+   "2025-09-20",
+   "2025-09-27",
+   "2025-10-04",
+   "2025-10-11",
+   "2025-10-18"
+  ],
+  "rows": [
+   {
+    "name": "احمد تامر محمد الشاذلى",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 2,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 3,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 3,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 1,
+      "participation": 2,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 3,
+      "participation": 3,
+      "homework": 2
+     }
+    ],
+    "paper": 15
+   },
+   {
+    "name": "احمد مصطفى عزيز عبد الله",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     }
+    ],
+    "paper": 59
+   },
+   {
+    "name": "حسن احمد حسن محمد",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     }
+    ],
+    "paper": 74
+   },
+   {
+    "name": "خالد فراج حميدة عبد الوهاب",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     }
+    ],
+    "paper": 35
+   },
+   {
+    "name": "عمر حازم احمد السيد",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 1,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 2,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 2,
+      "participation": 2,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 2,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 3,
+      "participation": 3,
+      "homework": 2
+     }
+    ],
+    "paper": 45
+   },
+   {
+    "name": "محمد محمود كمال",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 1,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 2,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 2,
+      "homework": 1
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 1,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 3,
+      "participation": 3,
+      "homework": 2
+     }
+    ],
+    "paper": 15
+   },
+   {
+    "name": "يوسف شنودة منير واسيلى",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     }
+    ],
+    "paper": 61
+   },
+   {
+    "name": "حنين احمد عزت فايز",
+    "weeks": [
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     },
+     {
+      "attendance": 4,
+      "conduct": 4,
+      "participation": 4,
+      "homework": 4
+     }
+    ],
+    "paper": 86
+   }
+  ],
+  "component": "theory",
+  "subjectName": "الدراسات الفنية التخصصية",
+  "subjectNameEn": "Specialised Technical Studies",
+  "gradeLevel": "1Sec",
+  "academicYear": "2025/2026",
+  "periodKey": "formative1",
+  "teacherName": "",
+  "evaluationOfficer": "وليد حلمي ابراهيم الغريب",
+  "academicManager": ""
+ },
+ {
+  "periodLabel": "تكوينى اول",
+  "monthLabel": "شهر سبتمبر - اكتوبر 2025",
+  "weekDates": [
+   "2025-09-20",
+   "2025-09-27",
+   "2025-10-04",
+   "2025-10-11",
+   "2025-10-18"
+  ],
+  "rows": [
+   {
+    "name": "احمد تامر محمد الشاذلى",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 1,
+      "participation": 2
+     },
+     {
+      "attendance": 2,
+      "conduct": 2,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 2,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 1,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 2
+     }
+    ],
+    "paper": 9.18
+   },
+   {
+    "name": "احمد مصطفى عزيز عبد الله",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 14.4
+   },
+   {
+    "name": "حسن احمد حسن محمد",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 16.2
+   },
+   {
+    "name": "خالد فراج حميدة عبد الوهاب",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 9.18
+   },
+   {
+    "name": "عمر حازم احمد السيد",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 1,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 1,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 9.18
+   },
+   {
+    "name": "محمد محمود كمال",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 1
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 2
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 2
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 2
+     }
+    ],
+    "paper": 8.82
+   },
+   {
+    "name": "يوسف شنودة منير واسيلى",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 14.4
+   },
+   {
+    "name": "حنين احمد عزت فايز",
+    "weeks": [
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     },
+     {
+      "attendance": 2,
+      "conduct": 3,
+      "participation": 3
+     }
+    ],
+    "paper": 17.1
+   }
+  ],
+  "component": "practical",
+  "subjectName": "الدراسات الفنية التخصصية",
+  "subjectNameEn": "Specialised Technical Studies",
+  "gradeLevel": "1Sec",
+  "academicYear": "2025/2026",
+  "periodKey": "formative1",
+  "teacherName": "",
+  "evaluationOfficer": "وليد حلمي ابراهيم الغريب",
+  "academicManager": ""
+ }
+]
