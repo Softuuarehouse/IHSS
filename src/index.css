@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { margin: 0; background: #f9f9ff; color: #111c2d; }
+  body { font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, sans-serif; }
+  [dir='rtl'] body { font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif; }
+  h1, h2, .font-display { font-family: 'Playfair Display', 'Cairo', serif; }
+  input, select, textarea, button { font-family: inherit; }
+}
+@layer components {
+  .icon { font-family: 'Material Symbols Outlined'; font-weight: 400; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; font-size: 20px; vertical-align: middle; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-label-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-primary text-on-primary hover:bg-primary-container; }
+  .btn-secondary { @apply btn bg-surface-container text-on-surface hover:bg-surface-container-high; }
+  .btn-outline { @apply btn border border-outline-variant bg-white text-on-surface hover:bg-surface-container-low; }
+  .btn-danger { @apply btn bg-error text-on-error hover:opacity-90; }
+  .btn-sm { @apply px-3 py-1.5 text-label-md; }
+  .input { @apply w-full rounded-lg border border-outline-variant bg-white px-3 py-2 text-body-md outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed; }
+  .card { @apply rounded-xl border border-surface-container-highest bg-white shadow-sm; }
+  .th { @apply whitespace-nowrap bg-surface-container px-3 py-2 text-start text-label-md font-semibold text-on-surface-variant; }
+  .td { @apply px-3 py-2 text-body-md align-middle; }
+  .chip { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-label-md font-semibold; }
+  @keyframes flash { 0% { background: #fff3c4; } 100% { background: transparent; } }
+  .flash { animation: flash 2.2s ease-out; }
+}
+
+/* ---------------------------------------------------------------------------
+ * Dark mode. The design system's colors are compiled by Tailwind as fixed hex
+ * utilities (not CSS variables), so instead of re-theming every class we invert
+ * the whole page and invert images back — a standard, low-risk way to get a
+ * correct dark palette out of a light-only design system without a rewrite.
+ * ------------------------------------------------------------------------- */
+html.dark body { background: #f9f9ff; filter: invert(1) hue-rotate(180deg); }
+html.dark img { filter: invert(1) hue-rotate(180deg); }
+
+@media (min-width: 1024px) {
+  .app-sidebar {
+    position: static !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+}
