@@ -98,7 +98,7 @@ function Attendance() {
                     <td className="td text-center font-mono font-bold text-secondary">{r.ledger ? num(r.ledger.present) : ''}</td>
                     <td className="td text-center font-mono">
                       {(() => {
-                        const total = year[r.staff._id]?.absence ?? r.ledger?.absence ?? 0;
+                        const total = r.ledger?.absence ?? 0;
                         return <Chip tone={total > 10 ? 'bad' : 'neutral'}>{num(total)}</Chip>;
                       })()}
                     </td>
