@@ -98,11 +98,8 @@ function Attendance() {
                     <td className="td text-center font-mono font-bold text-secondary">{r.ledger ? num(r.ledger.present) : ''}</td>
                     <td className="td text-center font-mono">
                       {(() => {
-                        const imported = r.staff.importedStats?.['اجمالي الغياب'];
-                        const total = imported !== undefined ? imported : year[r.staff._id]?.absence;
-                        return total !== undefined
-                          ? <Chip tone={total > 10 ? 'bad' : 'neutral'}>{num(total)}</Chip>
-                          : '—';
+                        const total = year[r.staff._id]?.absence ?? r.ledger?.absence ?? 0;
+                        return <Chip tone={total > 10 ? 'bad' : 'neutral'}>{num(total)}</Chip>;
                       })()}
                     </td>
                   </tr>
