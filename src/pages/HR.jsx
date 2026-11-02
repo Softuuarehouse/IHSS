@@ -82,7 +82,7 @@ function Attendance() {
       <div className="card overflow-x-auto">
         {!rows ? <Spinner /> : (
           <table className="w-full min-w-[820px]">
-            <thead><tr><th className="th">#</th><th className="th">{t('fullName')}</th><th className="th">{t('jobTitle')}</th><th className="th text-center">{t('workingDays')}</th><th className="th text-center">{t('leave')}</th><th className="th text-center">{t('absence')}</th><th className="th text-center">{t('present')}</th><th className="th text-center">Σ {t('absence')}</th><th className="th text-center" title={t('fromFileHint')}>{t('fromFile')}: {t('absence')}</th></tr></thead>
+            <thead><tr><th className="th">#</th><th className="th">{t('fullName')}</th><th className="th">{t('jobTitle')}</th><th className="th text-center">{t('workingDays')}</th><th className="th text-center">{t('leave')}</th><th className="th text-center">{t('absence')}</th><th className="th text-center">{t('present')}</th><th className="th text-center">Σ {t('absence')}</th></tr></thead>
             <tbody>
               {groups.map(([cat, list]) => list.length > 0 && [
                 <tr key={cat} className="bg-surface-container-low"><td colSpan={8} className="px-3 py-1.5 text-label-md font-bold text-primary">{t(cat)}</td></tr>,
@@ -96,19 +96,20 @@ function Attendance() {
                       </td>
                     ))}
                     <td className="td text-center font-mono font-bold text-secondary">{r.ledger ? num(r.ledger.present) : ''}</td>
-                    <td className="td text-center font-mono">{year[r.staff._id] ? <Chip tone={year[r.staff._id].absence > 10 ? 'bad' : 'neutral'}>{num(year[r.staff._id].absence)}</Chip> : ''}</td>
-                    <td className="td text-center font-mono text-outline">
-                      {r.staff.importedStats?.['اجمالي الغياب'] !== undefined
-                        ? (year[r.staff._id] && year[r.staff._id].absence !== r.staff.importedStats['اجمالي الغياب']
-                            ? <Chip tone="warn" title={t('fromFileHint')}>{num(r.staff.importedStats['اجمالي الغياب'])}</Chip>
-                            : num(r.staff.importedStats['اجمالي الغياب']))
-                        : '—'}
+                    <td className="td text-center font-mono">
+                      {(() => {
+                        const imported = r.staff.importedStats?.['اجمالي الغياب'];
+                        const total = imported !== undefined ? imported : year[r.staff._id]?.absence;
+                        return total !== undefined
+                          ? <Chip tone={total > 10 ? 'bad' : 'neutral'}>{num(total)}</Chip>
+                          : '—';
+                      })()}
                     </td>
                   </tr>
                 )),
               ])}
             </tbody>
-            <tfoot><tr className="border-t-2 border-outline-variant bg-surface-container-low font-bold"><td className="td" colSpan={3}>{t('totals')}</td>{['workingDays', 'leave', 'absence', 'present'].map((k) => <td key={k} className="td text-center font-mono">{num(tot(k))}</td>)}<td /><td /></tr></tfoot>
+            <tfoot><tr className="border-t-2 border-outline-variant bg-surface-container-low font-bold"><td className="td" colSpan={3}>{t('totals')}</td>{['workingDays', 'leave', 'absence', 'present'].map((k) => <td key={k} className="td text-center font-mono">{num(tot(k))}</td>)}<td /></tr></tfoot>
           </table>
         )}
       </div>
