@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { api } from '../lib/api';
 import { useAuth } from '../lib/auth';
 import { useI18n } from '../lib/i18n';
@@ -6,214 +6,19 @@ import { getSocket } from '../lib/socket';
 import CrudTable from '../components/CrudTable';
 import { Chip, Icon, PageHeader, Spinner, StatCard } from '../components/ui';
 
-/* ───────────── settings you may need to adjust ───────────── */
-// Endpoint used to create ONE transaction (called once per Excel row).
-const CREATE_URL = '/accounts';
-// Excel category text -> existing expense category key (first match wins).
-// Anything that matches nothing goes to "other_expense". You can also change it per category in the preview.
-const RULES = [
-  [/salar/, 'salaries'],
-  [/\brent/, 'rent'],
-  [/internet|phone|electric|water|utilit/, 'utilities'],
-  [/media|publicity|admission|event|advert|marketing/, 'marketing'],
-  [/clean|maint|repair/, 'maintenance'],
-  [/transport|\bbus\b|taxi|uber/, 'transport'],
-  [/needs|tools|buf+et|hospitality|suppl/, 'supplies'],
-];
-/* ──────────────────────────────────────────────────────────── */
-
-const norm = (s) => String(s ?? '').trim().replace(/\s+/g, ' ');
-const low = (s) => norm(s).toLowerCase();
-
-/* Excel date -> 'YYYY-MM-DD'. Handles serial numbers, Date objects and text dates. */
-function toISO(v) {
-  if (v == null || v === '') return null;
-  if (typeof v === 'number' && v > 20000 && v < 80000) return new Date(Date.UTC(1899, 11, 30) + Math.round(v) * 86400000).toISOString().slice(0, 10);
-  if (v instanceof Date && !isNaN(v)) return new Date(v.getTime() - v.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-  const s = norm(v); let m;
-  if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/))) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
-  if ((m = s.match(/^(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})$/))) return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`; // d/m/yyyy
-  return null;
-}
-
-/* Read the workbook: find the header row (Categories / Item / Amount / Date) and turn each line into an EXPENSE. */
-async function parseExcel(file) {
-  const XLSX = await import('xlsx'); // npm i xlsx
-  const wb = XLSX.read(await file.arrayBuffer(), { type: 'array' });
-  const rows = []; let skipped = 0;
-  for (const name of wb.SheetNames) {
-    const grid = XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, raw: true, defval: null });
-    const h = grid.findIndex((r) => r.some((c) => /^amount$/i.test(norm(c))) && r.some((c) => /^date$/i.test(norm(c))));
-    if (h < 0) continue;
-    const head = grid[h].map((c) => low(c));
-    const iCat = head.findIndex((c) => /^cat/.test(c)), iItem = head.indexOf('item'), iAmt = head.indexOf('amount'), iDate = head.indexOf('date');
-    for (let i = h + 1; i < grid.length; i++) {
-      const r = grid[i];
-      if (r.every((c) => c == null || c === '')) continue;
-      const item = norm(r[iItem]), amount = Number(r[iAmt]), date = toISO(r[iDate]);
-      if (!item || !(amount > 0) || !date) { skipped++; continue; } // salary header lines, zero rows, etc.
-      const note = r[iAmt + 1] != null && iAmt + 1 < iDate ? norm(r[iAmt + 1]) : '';   // e.g. "down payment", "3 months"
-      const who = typeof r[iDate + 1] === 'string' ? norm(r[iDate + 1]) : '';          // e.g. "ramy", "ahmed"
-      rows.push({ line: i + 1, sheet: name, rawCat: norm(r[iCat]), amount, date, description: note ? `${item} — ${note}` : item, reference: who });
-    }
-  }
-  return { rows, skipped };
-}
+/* t() returns the key itself when a translation is missing -> use a readable fallback */
+const tt = (t, k, fb) => { const v = t(k); return v && v !== k ? v : fb; };
 
 export default function Accounts() {
   const { t, num } = useI18n(); const { can, meta } = useAuth();
   const [tab, setTab] = useState('financialPosition');
-  const [reload, setReload] = useState(0);
-  const [imp, setImp] = useState(null);           // parsed file waiting for confirmation / being imported
-  const fileRef = useRef(null);
-
-  const onPick = async (e) => {
-    const f = e.target.files?.[0]; e.target.value = '';
-    if (!f) return;
-    try { setImp({ file: f.name, ...(await parseExcel(f)), state: 'preview' }); }
-    catch (err) { alert(`${t('importFailed') !== 'importFailed' ? t('importFailed') : 'Could not read the file'}: ${err.message}`); }
-  };
-
   return (
     <div>
-      <PageHeader title={t('accounts')} presenceRoom="accounts" actions={<div className="flex gap-2">
-        {can('accounts:create') !== false && <>
-          <input ref={fileRef} type="file" accept=".xlsx,.xls,.csv" hidden onChange={onPick} />
-          <button className="btn-outline" onClick={() => fileRef.current?.click()}><Icon name="upload" />{tt(t, 'import', 'Import')}</button>
-        </>}
-        {can('accounts:export') && <button className="btn-outline" onClick={() => api.download('/export/transactions', 'transactions.xlsx')}><Icon name="download" />{t('export')}</button>}
-      </div>} />
+      <PageHeader title={t('accounts')} presenceRoom="accounts" actions={can('accounts:export') && <button className="btn-outline" onClick={() => api.download('/export/transactions', 'transactions.xlsx')}><Icon name="download" />{t('export')}</button>} />
       <div className="mb-4 flex gap-2">
         {['financialPosition', 'transactions'].map((k) => <button key={k} onClick={() => setTab(k)} className={`chip shrink-0 !px-4 !py-2 ${tab === k ? 'bg-primary text-on-primary' : 'bg-white border border-outline-variant'}`}>{t(k)}</button>)}
       </div>
-      {tab === 'financialPosition' ? <Position key={reload} /> : <Transactions key={reload} cats={meta.categories} num={num} />}
-      {imp && <ImportDialog imp={imp} setImp={setImp} cats={meta.categories}
-        onDone={() => { setReload((n) => n + 1); setTab('transactions'); }} />}
-    </div>
-  );
-}
-
-/* t() returns the key itself when a translation is missing -> use a readable fallback */
-const tt = (t, k, fb) => { const v = t(k); return v && v !== k ? v : fb; };
-
-/* ───────────── import dialog ───────────── */
-function ImportDialog({ imp, setImp, cats, onDone }) {
-  const { t, num } = useI18n();
-  const stop = useRef(false);
-  const [prog, setProg] = useState({ done: 0, ok: 0, fail: [] });
-  const [view, setView] = useState('categories'); // 'categories' | 'rows'
-  const [override, setOverride] = useState({});   // Excel category (lowercase) -> chosen category key
-
-  // Map every Excel category to an EXISTING expense category; no match -> other_expense. The user can change each mapping.
-  const plan = useMemo(() => {
-    const keys = cats.expense;
-    const fallback = keys.includes('other_expense') ? 'other_expense' : keys[keys.length - 1];
-    const lookup = new Map();
-    keys.forEach((c) => { lookup.set(low(c), c); lookup.set(low(c.replace(/_/g, ' ')), c); lookup.set(low(t(c)), c); });
-    const auto = (raw) => {
-      if (!raw) return fallback;
-      const k = low(raw);
-      if (lookup.has(k)) return lookup.get(k);
-      for (const [re, key] of RULES) if (re.test(k) && keys.includes(key)) return key;
-      return fallback;
-    };
-    const groups = new Map();
-    const items = imp.rows.map((r) => {
-      const gk = low(r.rawCat);
-      const category = override[gk] ?? auto(r.rawCat);
-      const g = groups.get(gk) || { gk, raw: r.rawCat || '—', category, count: 0, sum: 0 };
-      g.count++; g.sum += r.amount; groups.set(gk, g);
-      // keep the original Excel category in the description when it is not the same as the chosen one
-      const same = !r.rawCat || low(r.rawCat) === low(category) || low(r.rawCat) === low(t(category));
-      return { ...r, category, description: same ? r.description : `${r.description} (${r.rawCat})` };
-    });
-    const dates = items.map((r) => r.date).sort();
-    return { items, groups: [...groups.values()].sort((a, b) => b.sum - a.sum), other: items.filter((r) => r.category === fallback).length, fallback, from: dates[0], to: dates[dates.length - 1] };
-  }, [imp.rows, cats, t, override]);
-
-  const total = plan.items.reduce((a, r) => a + r.amount, 0);
-  const running = imp.state === 'running';
-
-  const start = async () => {
-    stop.current = false; setImp((p) => ({ ...p, state: 'running' }));
-    let ok = 0; const fail = [];
-    for (let i = 0; i < plan.items.length; i++) {                     // send ROW BY ROW
-      if (stop.current) break;
-      const r = plan.items[i];
-      try {
-        await api.post(CREATE_URL, { type: 'expense', category: r.category, amount: r.amount, date: r.date, description: r.description, method: 'cash', reference: r.reference });
-        ok++;
-      } catch (err) { fail.push({ line: r.line, item: r.description, msg: err?.message || 'error' }); }
-      setProg({ done: i + 1, ok, fail: [...fail] });
-    }
-    setImp((p) => ({ ...p, state: 'done' }));
-  };
-  const close = () => { if (running) { stop.current = true; return; } if (imp.state === 'done') onDone(); setImp(null); };
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
-      <div className="card flex max-h-[90vh] w-full max-w-2xl flex-col p-5">
-        <div className="mb-3 flex items-center justify-between">
-          <h3 className="font-display text-headline-sm">{tt(t, 'import', 'Import')} · <span className="font-mono text-body-sm">{imp.file}</span></h3>
-          <button onClick={close} aria-label="close"><Icon name="close" /></button>
-        </div>
-
-        {plan.items.length === 0 ? <div className="text-outline">{tt(t, 'nothingToImport', 'No valid rows found (need Categories / Item / Amount / Date columns).')}</div> : <>
-          <div className="mb-3 flex flex-wrap gap-2">
-            <Chip tone="warn">{tt(t, 'expense', 'Expense')}</Chip>
-            <Chip tone="info">{plan.items.length} {tt(t, 'rows', 'rows')}</Chip>
-            <Chip tone="ok">{num(total, 2)} {t('egp')}</Chip>
-            {plan.from && <Chip tone="neutral">{plan.from} → {plan.to}</Chip>}
-            {plan.other > 0 && <Chip tone="info">{plan.other} → {tt(t, plan.fallback, 'Other expense')}</Chip>}
-            {imp.skipped > 0 && <Chip tone="neutral">{imp.skipped} {tt(t, 'skippedRows', 'skipped (empty / zero)')}</Chip>}
-          </div>
-
-          <div className="mb-2 flex gap-2">
-            {[['categories', tt(t, 'byCategory', 'By category')], ['rows', tt(t, 'rows', 'Rows')]].map(([k, l]) => (
-              <button key={k} onClick={() => setView(k)} className={`chip !px-3 !py-1 ${view === k ? 'bg-primary text-on-primary' : 'bg-white border border-outline-variant'}`}>{l}</button>))}
-          </div>
-          <div className="mb-3 min-h-0 flex-1 overflow-auto rounded-lg border border-outline-variant">
-            {view === 'categories' ? (
-              <table className="w-full text-body-sm">
-                <thead className="sticky top-0 bg-surface-container"><tr><th className="p-2 text-start">Excel</th><th className="p-2 text-start">→ {t('category')}</th><th className="p-2">#</th><th className="p-2 text-end">{t('amount')}</th></tr></thead>
-                <tbody>{plan.groups.map((g) => (
-                  <tr key={g.gk} className="border-t border-surface-container">
-                    <td className="p-2">{g.raw}</td>
-                    <td className="p-2">
-                      <select disabled={imp.state !== 'preview'} value={g.category} onChange={(e) => setOverride((p) => ({ ...p, [g.gk]: e.target.value }))} className="rounded-lg border border-outline-variant bg-white px-2 py-1 text-body-sm">
-                        {cats.expense.map((c) => <option key={c} value={c}>{tt(t, c, c)}</option>)}
-                      </select>
-                    </td>
-                    <td className="p-2 text-center font-mono">{g.count}</td>
-                    <td className="p-2 text-end font-mono">{num(g.sum, 2)}</td>
-                  </tr>))}</tbody>
-              </table>
-            ) : (
-              <table className="w-full text-body-sm">
-                <thead className="sticky top-0 bg-surface-container"><tr><th className="p-2 text-start">{t('date')}</th><th className="p-2 text-start">{t('category')}</th><th className="p-2 text-start">{t('description')}</th><th className="p-2 text-end">{t('amount')}</th></tr></thead>
-                <tbody>{plan.items.map((r) => (
-                  <tr key={r.line} className="border-t border-surface-container">
-                    <td className="whitespace-nowrap p-2 font-mono">{r.date}</td>
-                    <td className="p-2">{tt(t, r.category, r.category)}</td>
-                    <td className="p-2">{r.description}{r.reference && <span className="text-outline"> · {r.reference}</span>}</td>
-                    <td className="p-2 text-end font-mono">{num(r.amount, 2)}</td>
-                  </tr>))}</tbody>
-              </table>
-            )}
-          </div>
-
-          {imp.state !== 'preview' && <div className="mb-3">
-            <div className="mb-1 flex justify-between text-body-sm"><span>{prog.done} / {plan.items.length}</span><span className="text-secondary">{prog.ok} ✓</span>{prog.fail.length > 0 && <span className="text-error">{prog.fail.length} ✗</span>}</div>
-            <div className="h-2.5 rounded-full bg-surface-container"><div className="h-2.5 rounded-full bg-secondary transition-all" style={{ width: `${(prog.done / plan.items.length) * 100}%` }} /></div>
-            {prog.fail.length > 0 && <ul className="mt-2 max-h-28 overflow-auto text-body-sm text-error">{prog.fail.slice(-20).map((f) => <li key={f.line}>#{f.line} {f.item}: {f.msg}</li>)}</ul>}
-          </div>}
-        </>}
-
-        <div className="flex justify-end gap-2">
-          <button className="btn-outline" onClick={close}>{running ? tt(t, 'stop', 'Stop') : imp.state === 'done' ? tt(t, 'close', 'Close') : tt(t, 'cancel', 'Cancel')}</button>
-          {imp.state === 'preview' && plan.items.length > 0 && <button className="chip !px-4 !py-2 bg-primary text-on-primary" onClick={start}><Icon name="upload" />{tt(t, 'startImport', 'Start import')}</button>}
-        </div>
-      </div>
+      {tab === 'financialPosition' ? <Position /> : <Transactions cats={meta.categories} num={num} />}
     </div>
   );
 }
@@ -252,7 +57,7 @@ function Position() {
         <div className="card p-5">
           <h3 className="mb-3 font-display text-headline-sm">{t('byCategory')}</h3>
           {Object.entries(s.byCategory).map(([c, v]) => (
-            <div key={c} className="flex items-center justify-between border-b border-surface-container py-2"><span>{tt(t, s.categories.revenue.includes(c) && c !== 'other_revenue' ? `${c}_c` : c, c)}</span><span className="font-mono">{num(v, 2)}</span></div>
+            <div key={c} className="flex items-center justify-between border-b border-surface-container py-2"><span>{t(s.categories.revenue.includes(c) && c !== 'other_revenue' ? `${c}_c` : c)}</span><span className="font-mono">{num(v, 2)}</span></div>
           ))}
           <div className="mt-4 rounded-lg bg-primary-fixed/40 p-3 text-body-md"><Chip tone="info">{t('discountsGiven')}</Chip> <b className="font-mono">{num(s.discountsGiven)}</b> {t('egp')}</div>
         </div>
@@ -261,59 +66,124 @@ function Position() {
   );
 }
 
-/* ───────────── transactions + filters ───────────── */
-const EMPTY = { type: '', category: '', method: '', from: '', to: '', min: '', max: '' };
+/* ───────────── transactions + filters ─────────────
+   - No filter / search typed  -> the normal CrudTable (add / edit / delete as before).
+   - Any filter or search used -> a filtered list built here from GET /accounts, so the filters
+     work without touching CrudTable. Clear the filters to go back to the editable table. */
+const EMPTY = { q: '', type: '', category: '', method: '', from: '', to: '', min: '', max: '' };
 
 function Transactions({ cats, num }) {
   const { t, dateOnly } = useI18n();
   const [f, setF] = useState(EMPTY);
+  const [rows, setRows] = useState(null);
   const set = (k) => (e) => setF((p) => ({ ...p, [k]: e.target.value }));
-  const catLabel = (c) => tt(t, cats.revenue.includes(c) && c !== 'other_revenue' ? `${c}_c` : c, c);
+  const catLabel = (c) => t(cats.revenue.includes(c) && c !== 'other_revenue' ? `${c}_c` : c);
   const all = [...cats.revenue, ...cats.expense].map((c) => ({ value: c, label: catLabel(c) }));
   const active = Object.values(f).filter(Boolean).length;
 
-  // applied by CrudTable on its rows (see the one-line change in CrudTable below)
-  const filter = (r) => {
-    const d = String(r.date || '').slice(0, 10), a = Number(r.amount);
-    return (!f.type || r.type === f.type) && (!f.category || r.category === f.category) && (!f.method || r.method === f.method)
-      && (!f.from || d >= f.from) && (!f.to || d <= f.to) && (f.min === '' || a >= Number(f.min)) && (f.max === '' || a <= Number(f.max));
-  };
+  // load all transactions (and keep them fresh)
+  useEffect(() => {
+    let timer;
+    const load = () => api.get('/accounts')
+      .then((r) => setRows(Array.isArray(r) ? r : r?.items || r?.data || r?.rows || []))
+      .catch(() => setRows([]));
+    load(); const sock = getSocket();
+    const h = (e) => { if (e.entity === 'transactions') { clearTimeout(timer); timer = setTimeout(load, 400); } };
+    sock.on('entity:change', h); return () => { clearTimeout(timer); sock.off('entity:change', h); };
+  }, []);
+
+  const shown = useMemo(() => {
+    if (!rows) return [];
+    const q = f.q.trim().toLowerCase();
+    return rows.filter((r) => {
+      const d = String(r.date || '').slice(0, 10), a = Number(r.amount);
+      if (f.type && r.type !== f.type) return false;
+      if (f.category && r.category !== f.category) return false;
+      if (f.method && r.method !== f.method) return false;
+      if (f.from && d < f.from) return false;
+      if (f.to && d > f.to) return false;
+      if (f.min !== '' && !(a >= Number(f.min))) return false;
+      if (f.max !== '' && !(a <= Number(f.max))) return false;
+      if (q && !`${r.description || ''} ${r.reference || ''} ${catLabel(r.category)} ${r.amount}`.toLowerCase().includes(q)) return false;
+      return true;
+    }).sort((x, y) => String(y.date).localeCompare(String(x.date)));
+  }, [rows, f]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const sumOf = (type) => shown.filter((r) => r.type === type).reduce((a, r) => a + Number(r.amount || 0), 0);
   const sel = 'rounded-lg border border-outline-variant bg-white px-3 py-2 text-body-sm';
 
   return <>
-    <div className="mb-3 flex flex-wrap items-end gap-2">
-      <select className={sel} value={f.type} onChange={set('type')}>
-        <option value="">{t('type')}: {tt(t, 'all', 'All')}</option><option value="revenue">{t('revenue')}</option><option value="expense">{t('expense')}</option>
-      </select>
-      <select className={sel} value={f.category} onChange={set('category')}>
-        <option value="">{t('category')}: {tt(t, 'all', 'All')}</option>{all.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-      </select>
-      <select className={sel} value={f.method} onChange={set('method')}>
-        <option value="">{t('method')}: {tt(t, 'all', 'All')}</option>{['cash', 'bank', 'card', 'other'].map((m) => <option key={m} value={m}>{t(m)}</option>)}
-      </select>
-      <label className="text-body-sm text-outline">{tt(t, 'from', 'From')}<input type="date" className={`${sel} ms-1`} value={f.from} onChange={set('from')} /></label>
-      <label className="text-body-sm text-outline">{tt(t, 'to', 'To')}<input type="date" className={`${sel} ms-1`} value={f.to} onChange={set('to')} /></label>
-      <input type="number" min="0" placeholder={`${t('amount')} ≥`} className={`${sel} w-28`} value={f.min} onChange={set('min')} />
-      <input type="number" min="0" placeholder={`${t('amount')} ≤`} className={`${sel} w-28`} value={f.max} onChange={set('max')} />
-      {active > 0 && <button className="chip !px-3 !py-2 border border-outline-variant" onClick={() => setF(EMPTY)}><Icon name="filter_alt_off" />{tt(t, 'reset', 'Reset')} ({active})</button>}
+    {/* search + filters */}
+    <div className="mb-3 space-y-2">
+      <div className="relative">
+        <Icon name="search" />
+        <input className={`${sel} w-full`} placeholder={tt(t, 'search', 'Search…')} value={f.q} onChange={set('q')} />
+      </div>
+      <div className="flex flex-wrap items-end gap-2">
+        <select className={sel} value={f.type} onChange={set('type')}>
+          <option value="">{t('type')}: {tt(t, 'all', 'All')}</option><option value="revenue">{t('revenue')}</option><option value="expense">{t('expense')}</option>
+        </select>
+        <select className={sel} value={f.category} onChange={set('category')}>
+          <option value="">{t('category')}: {tt(t, 'all', 'All')}</option>{all.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+        </select>
+        <select className={sel} value={f.method} onChange={set('method')}>
+          <option value="">{t('method')}: {tt(t, 'all', 'All')}</option>{['cash', 'bank', 'card', 'other'].map((m) => <option key={m} value={m}>{t(m)}</option>)}
+        </select>
+        <label className="text-body-sm text-outline">{tt(t, 'from', 'From')}<input type="date" className={`${sel} ms-1`} value={f.from} onChange={set('from')} /></label>
+        <label className="text-body-sm text-outline">{tt(t, 'to', 'To')}<input type="date" className={`${sel} ms-1`} value={f.to} onChange={set('to')} /></label>
+        <input type="number" min="0" placeholder={`${t('amount')} ≥`} className={`${sel} w-28`} value={f.min} onChange={set('min')} />
+        <input type="number" min="0" placeholder={`${t('amount')} ≤`} className={`${sel} w-28`} value={f.max} onChange={set('max')} />
+        {active > 0 && <button className="chip !px-3 !py-2 border border-outline-variant" onClick={() => setF(EMPTY)}><Icon name="filter_alt_off" />{tt(t, 'reset', 'Reset')} ({active})</button>}
+      </div>
     </div>
-    <CrudTable module="accounts" entity="transactions" path="/accounts" addLabel={t('newTransaction')} filter={filter}
-      rowLocked={(r) => r.source === 'fee_payment'}
-      defaults={{ type: 'revenue', category: 'other_revenue', amount: '', date: new Date().toISOString().slice(0, 10), description: '', method: 'cash', reference: '' }}
-      columns={[
-        { key: 'date', label: t('date'), render: (r) => dateOnly(r.date) },
-        { key: 'type', label: t('type'), render: (r) => <Chip tone={r.type === 'revenue' ? 'ok' : 'warn'}>{t(r.type === 'revenue' ? 'revenue' : 'expense')}</Chip> },
-        { key: 'category', label: t('category'), render: (r) => catLabel(r.category) },
-        { key: 'amount', label: t('amount'), end: true, render: (r) => <span className={r.type === 'revenue' ? 'text-secondary' : 'text-error'}>{r.type === 'revenue' ? '+' : '−'}{num(r.amount, 2)}</span> },
-        { key: 'description', label: t('description'), render: (r) => <>{r.description} {r.source === 'fee_payment' && <Chip tone="info">{t('fromFees')}</Chip>}</> },
-        { key: 'reference', label: t('reference') },
-      ]}
-      fields={[
-        { key: 'type', label: t('type'), type: 'select', options: [{ value: 'revenue', label: t('revenue') }, { value: 'expense', label: t('expense') }] },
-        { key: 'category', label: t('category'), type: 'select', options: all },
-        { key: 'amount', label: t('amount'), type: 'number', min: 0, step: '0.01', required: true }, { key: 'date', label: t('date'), type: 'date', required: true },
-        { key: 'method', label: t('method'), type: 'select', options: ['cash', 'bank', 'card', 'other'].map((m) => ({ value: m, label: t(m) })) }, { key: 'reference', label: t('reference') },
-        { key: 'description', label: t('description'), full: true },
-      ]} />
+
+    {active === 0 ? (
+      <CrudTable module="accounts" entity="transactions" path="/accounts" addLabel={t('newTransaction')}
+        rowLocked={(r) => r.source === 'fee_payment'}
+        defaults={{ type: 'revenue', category: 'other_revenue', amount: '', date: new Date().toISOString().slice(0, 10), description: '', method: 'cash', reference: '' }}
+        columns={[
+          { key: 'date', label: t('date'), render: (r) => dateOnly(r.date) },
+          { key: 'type', label: t('type'), render: (r) => <Chip tone={r.type === 'revenue' ? 'ok' : 'warn'}>{t(r.type === 'revenue' ? 'revenue' : 'expense')}</Chip> },
+          { key: 'category', label: t('category'), render: (r) => catLabel(r.category) },
+          { key: 'amount', label: t('amount'), end: true, render: (r) => <span className={r.type === 'revenue' ? 'text-secondary' : 'text-error'}>{r.type === 'revenue' ? '+' : '−'}{num(r.amount, 2)}</span> },
+          { key: 'description', label: t('description'), render: (r) => <>{r.description} {r.source === 'fee_payment' && <Chip tone="info">{t('fromFees')}</Chip>}</> },
+          { key: 'reference', label: t('reference') },
+        ]}
+        fields={[
+          { key: 'type', label: t('type'), type: 'select', options: [{ value: 'revenue', label: t('revenue') }, { value: 'expense', label: t('expense') }] },
+          { key: 'category', label: t('category'), type: 'select', options: all },
+          { key: 'amount', label: t('amount'), type: 'number', min: 0, step: '0.01', required: true }, { key: 'date', label: t('date'), type: 'date', required: true },
+          { key: 'method', label: t('method'), type: 'select', options: ['cash', 'bank', 'card', 'other'].map((m) => ({ value: m, label: t(m) })) }, { key: 'reference', label: t('reference') },
+          { key: 'description', label: t('description'), full: true },
+        ]} />
+    ) : !rows ? <Spinner /> : (
+      <div className="card overflow-hidden">
+        <div className="flex flex-wrap items-center gap-2 border-b border-surface-container p-3">
+          <Chip tone="info">{shown.length} / {rows.length}</Chip>
+          <Chip tone="ok">+{num(sumOf('revenue'), 2)}</Chip>
+          <Chip tone="warn">−{num(sumOf('expense'), 2)}</Chip>
+          <span className="text-body-sm text-outline">{tt(t, 'filterHint', 'Clear the filters to add or edit transactions.')}</span>
+        </div>
+        {shown.length === 0 ? <div className="p-5 text-outline">{t('empty')}</div> : (
+          <div className="overflow-auto">
+            <table className="w-full text-body-sm">
+              <thead className="bg-surface-container"><tr>
+                <th className="p-2 text-start">{t('date')}</th><th className="p-2 text-start">{t('type')}</th><th className="p-2 text-start">{t('category')}</th>
+                <th className="p-2 text-end">{t('amount')}</th><th className="p-2 text-start">{t('description')}</th><th className="p-2 text-start">{t('reference')}</th>
+              </tr></thead>
+              <tbody>{shown.map((r, i) => (
+                <tr key={r._id || r.id || i} className="border-t border-surface-container">
+                  <td className="whitespace-nowrap p-2">{dateOnly(r.date)}</td>
+                  <td className="p-2"><Chip tone={r.type === 'revenue' ? 'ok' : 'warn'}>{t(r.type === 'revenue' ? 'revenue' : 'expense')}</Chip></td>
+                  <td className="p-2">{catLabel(r.category)}</td>
+                  <td className={`whitespace-nowrap p-2 text-end font-mono ${r.type === 'revenue' ? 'text-secondary' : 'text-error'}`}>{r.type === 'revenue' ? '+' : '−'}{num(r.amount, 2)}</td>
+                  <td className="p-2">{r.description} {r.source === 'fee_payment' && <Chip tone="info">{t('fromFees')}</Chip>}</td>
+                  <td className="p-2">{r.reference}</td>
+                </tr>))}</tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    )}
   </>;
 }
