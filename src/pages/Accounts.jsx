@@ -96,6 +96,7 @@ function ImportDialog({ imp, setImp, cats, custom, onNewCategories, onDone }) {
   const { t, num } = useI18n();
   const stop = useRef(false);
   const [prog, setProg] = useState({ done: 0, ok: 0, fail: [] });
+  const [view, setView] = useState('categories'); // 'categories' | 'rows'
 
   // Map every Excel category to an existing one (by key or by translated label) or mark it as NEW.
   const plan = useMemo(() => {
@@ -112,7 +113,8 @@ function ImportDialog({ imp, setImp, cats, custom, onNewCategories, onDone }) {
       s.count++; s.sum += r.amount; summary.set(category, s);
       return { ...r, category };
     });
-    return { items, summary: [...summary.values()].sort((a, b) => b.sum - a.sum), newNames: [...created.values()] };
+    const dates = items.map((r) => r.date).sort();
+    return { items, summary: [...summary.values()].sort((a, b) => b.sum - a.sum), newNames: [...created.values()], from: dates[0], to: dates[dates.length - 1] };
   }, [imp.rows, cats, custom, t]);
 
   const total = plan.items.reduce((a, r) => a + r.amount, 0);
@@ -148,20 +150,38 @@ function ImportDialog({ imp, setImp, cats, custom, onNewCategories, onDone }) {
             <Chip tone="warn">{tt(t, 'expense', 'Expense')}</Chip>
             <Chip tone="info">{plan.items.length} {tt(t, 'rows', 'rows')}</Chip>
             <Chip tone="ok">{num(total, 2)} {t('egp')}</Chip>
+            {plan.from && <Chip tone="neutral">{plan.from} → {plan.to}</Chip>}
             {plan.newNames.length > 0 && <Chip tone="info">{plan.newNames.length} {tt(t, 'newCategories', 'new categories')}</Chip>}
             {imp.skipped > 0 && <Chip tone="neutral">{imp.skipped} {tt(t, 'skippedRows', 'skipped (empty / zero)')}</Chip>}
           </div>
 
+          <div className="mb-2 flex gap-2">
+            {[['categories', tt(t, 'byCategory', 'By category')], ['rows', tt(t, 'rows', 'Rows')]].map(([k, l]) => (
+              <button key={k} onClick={() => setView(k)} className={`chip !px-3 !py-1 ${view === k ? 'bg-primary text-on-primary' : 'bg-white border border-outline-variant'}`}>{l}</button>))}
+          </div>
           <div className="mb-3 min-h-0 flex-1 overflow-auto rounded-lg border border-outline-variant">
-            <table className="w-full text-body-sm">
-              <thead className="sticky top-0 bg-surface-container"><tr><th className="p-2 text-start">{t('category')}</th><th className="p-2">#</th><th className="p-2 text-end">{t('amount')}</th></tr></thead>
-              <tbody>{plan.summary.map((s) => (
-                <tr key={s.category} className="border-t border-surface-container">
-                  <td className="p-2">{tt(t, s.category, s.category)} {s.isNew && <Chip tone="info">{tt(t, 'new', 'new')}</Chip>}</td>
-                  <td className="p-2 text-center font-mono">{s.count}</td>
-                  <td className="p-2 text-end font-mono">{num(s.sum, 2)}</td>
-                </tr>))}</tbody>
-            </table>
+            {view === 'categories' ? (
+              <table className="w-full text-body-sm">
+                <thead className="sticky top-0 bg-surface-container"><tr><th className="p-2 text-start">{t('category')}</th><th className="p-2">#</th><th className="p-2 text-end">{t('amount')}</th></tr></thead>
+                <tbody>{plan.summary.map((s) => (
+                  <tr key={s.category} className="border-t border-surface-container">
+                    <td className="p-2">{tt(t, s.category, s.category)} {s.isNew && <Chip tone="info">{tt(t, 'new', 'new')}</Chip>}</td>
+                    <td className="p-2 text-center font-mono">{s.count}</td>
+                    <td className="p-2 text-end font-mono">{num(s.sum, 2)}</td>
+                  </tr>))}</tbody>
+              </table>
+            ) : (
+              <table className="w-full text-body-sm">
+                <thead className="sticky top-0 bg-surface-container"><tr><th className="p-2 text-start">{t('date')}</th><th className="p-2 text-start">{t('category')}</th><th className="p-2 text-start">{t('description')}</th><th className="p-2 text-end">{t('amount')}</th></tr></thead>
+                <tbody>{plan.items.map((r) => (
+                  <tr key={r.line} className="border-t border-surface-container">
+                    <td className="whitespace-nowrap p-2 font-mono">{r.date}</td>
+                    <td className="p-2">{tt(t, r.category, r.category)}</td>
+                    <td className="p-2">{r.description}{r.reference && <span className="text-outline"> · {r.reference}</span>}</td>
+                    <td className="p-2 text-end font-mono">{num(r.amount, 2)}</td>
+                  </tr>))}</tbody>
+              </table>
+            )}
           </div>
 
           {imp.state !== 'preview' && <div className="mb-3">
