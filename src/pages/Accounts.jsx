@@ -67,10 +67,10 @@ function Position() {
 }
 
 /* ───────────── transactions + filters ─────────────
-   - No filter / search typed  -> the normal CrudTable (add / edit / delete as before).
-   - Any filter or search used -> a filtered list built here from GET /accounts, so the filters
+   - No filter used  -> the normal CrudTable (add / edit / delete as before).
+   - Any filter used -> a filtered list built here from GET /accounts, so the filters
      work without touching CrudTable. Clear the filters to go back to the editable table. */
-const EMPTY = { q: '', type: '', category: '', method: '', from: '', to: '', min: '', max: '' };
+const EMPTY = { type: '', category: '', method: '', from: '', to: '', min: '', max: '' };
 
 function Transactions({ cats, num }) {
   const { t, dateOnly } = useI18n();
@@ -94,7 +94,6 @@ function Transactions({ cats, num }) {
 
   const shown = useMemo(() => {
     if (!rows) return [];
-    const q = f.q.trim().toLowerCase();
     return rows.filter((r) => {
       const d = String(r.date || '').slice(0, 10), a = Number(r.amount);
       if (f.type && r.type !== f.type) return false;
@@ -104,7 +103,6 @@ function Transactions({ cats, num }) {
       if (f.to && d > f.to) return false;
       if (f.min !== '' && !(a >= Number(f.min))) return false;
       if (f.max !== '' && !(a <= Number(f.max))) return false;
-      if (q && !`${r.description || ''} ${r.reference || ''} ${catLabel(r.category)} ${r.amount}`.toLowerCase().includes(q)) return false;
       return true;
     }).sort((x, y) => String(y.date).localeCompare(String(x.date)));
   }, [rows, f]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -114,11 +112,7 @@ function Transactions({ cats, num }) {
 
   return <>
     {/* search + filters */}
-    <div className="mb-3 space-y-2">
-      <div className="relative">
-        <Icon name="search" />
-        <input className={`${sel} w-full`} placeholder={tt(t, 'search', 'Search…')} value={f.q} onChange={set('q')} />
-      </div>
+    <div className="mb-3">
       <div className="flex flex-wrap items-end gap-2">
         <select className={sel} value={f.type} onChange={set('type')}>
           <option value="">{t('type')}: {tt(t, 'all', 'All')}</option><option value="revenue">{t('revenue')}</option><option value="expense">{t('expense')}</option>
